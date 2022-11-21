@@ -13,7 +13,11 @@ class m221119_130628_user extends Migration
     public function safeUp()
     {
         $this->createTable('user', [
-            'id' => $this->primaryKey()
+            'id' => $this->primaryKey(),
+            'username' => $this->string(255),
+            'password' => $this->string(255),
+            'auth_key' => $this->string(255),
+            'access_token' => $this->string(255),
         ]);
     }
 
@@ -22,9 +26,10 @@ class m221119_130628_user extends Migration
      */
     public function safeDown()
     {
-        echo "m221119_130628_user cannot be reverted.\n";
-
-        return false;
+        $this->delete('user');
+//        echo "m221119_130628_user cannot be reverted.\n";
+//
+//        return false;
     }
 
     /*

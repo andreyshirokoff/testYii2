@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use app\models\Post;
 use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
@@ -62,6 +63,12 @@ class SiteController extends Controller
     public function actionIndex()
     {
         return $this->render('index');
+
+        //delete
+//        $post = new Post();
+//        echo $post->property1;
+//        echo $post->property2;
+//        echo $post->foo();
     }
 
     /**
@@ -125,4 +132,6 @@ class SiteController extends Controller
     {
         return $this->render('about');
     }
+
+
 }
